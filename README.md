@@ -12,25 +12,18 @@ These tasks are designed to expose deep, systematic weaknesses in current fronti
 - Template metaprogramming / expression templates / consteval
 - Real upstream contribution quality (must pass CI of JOML, Eigen, Apache Commons Math, JAX, PyTorch, etc.)
 
+### Important Definitions (used consistently across all evals)
+
+- A **turn** = one message from the human evaluator to the model (i.e. one real user prompt).  
+  It does **not** count yes/no/skip micro-interactions or the model asking for confirmation.
+- Every evaluation folder contains a `requirements.md` that lists mandatory technical constraints (hardware, compiler flags, profiler commands, acceptable error bounds, etc.).
+
 Each evaluation is 8–22 turns deep and requires the model to iteratively debug, optimize, prove correctness, and deliver merge-ready code.
 
 I am actively seeking paid contract or bounty work with AI labs to:
 - Build custom high-difficulty evals
 - Perform red teaming on internal coding agents
 - Develop safety-relevant evaluations (biosecurity, cyber, avionics, finance, robotics)
-
-### Current Public Evaluations
-
-| # | Domain                          | Language / Framework        | Turns | Typical Failure Turn |
-|---|----------------------------------|-----------------------------|-------|----------------------|
-| 01 | JOML – CGA Motors + AVX-512     | Java 21 + Panama Vector API | 18    | 6–9                 |
-| 02 | Apache Commons Math – Elliptic Integrals | Java + Vector API | 16    | 7–10                |
-| 03 | JAX – Full CGA Custom Primitives| JAX + custom vjp/pmap       | 17    | 4–8                 |
-| 04 | Eigen – Dual Quaternion Skinning| C++20 + AVX-512             | 19    | 8–11                |
-| 05 | Rust nalgebra – Projective GA   | Rust 1.82 + const generics  | 15    | 5–9                 |
-| 06 | PyTorch – Geometric Fabric      | Python + TorchScript        | 20    | 9–13                |
-
-More coming weekly (Rust GPU, Zig, CUDA, Carbon, Mojo, etc.)
 
 ### Contact
 
