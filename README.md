@@ -1,4 +1,6 @@
-# Amariah Kamau – Frontier Model Red Teaming & Hard Coding Evals Portfolio
+# Amariah Kamau – Frontier Model Red Teaming & Hard-Coding Evals Portfolio
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 Independent researcher creating the hardest publicly available, repository-grounded, multi-turn coding evaluations on the internet.
 
@@ -8,27 +10,64 @@ These tasks are designed to expose deep, systematic weaknesses in current fronti
 - Numerical drift in long chains (10⁶ – 10⁹ operations)
 - Correct automatic differentiation (vjp/jvp/custom primitives)
 - SIMD / AVX-512 / CUDA / Metal fusion without temporaries
-- Subtle mathematical correctness (FMA vs ADD drift, denormals associativity grade projection)
-- Template metaprogramming / expression templates / consteval
+- Subtle mathematical correctness (FMA vs ADD drift, denormals, associativity grade projection)
+- Template metaprogramming / expression templates / `consteval`
 - Real upstream contribution quality (must pass CI of JOML, Eigen, Apache Commons Math, JAX, PyTorch, etc.)
 
-### Important Definitions (used consistently across all evals)
+---
 
-- A **turn** = one message from the human evaluator to the model (i.e. one real user prompt).  
-  It does **not** count yes/no/skip micro-interactions or the model asking for confirmation.
-- Every evaluation folder contains a `requirements.md` that lists mandatory technical constraints (hardware, compiler flags, profiler commands, acceptable error bounds, etc.).
+## 📁 Repository Structure (Used Across All Evals)
 
-Each evaluation is 8–22 turns deep and requires the model to iteratively debug, optimize, prove correctness, and deliver merge-ready code.
+Each evaluation folder strictly follows this format:
 
-I am actively seeking paid contract or bounty work with AI labs to:
-- Build custom high-difficulty evals
-- Perform red teaming on internal coding agents
-- Develop safety-relevant evaluations (biosecurity, cyber, avionics, finance, robotics)
+/eval-name/
+requirements.md ← Technical constraints: hardware, compilers, flags, profilers,
+memory/time caps, numeric tolerances, CI requirements.
+task.md ← Full multi-turn evaluation prompt.
+expected_result.md ← Ground-truth invariants, acceptance tests, proofs, performance
+ceilings, and red-team traps.
 
-### Contact
+yaml
+Copy code
 
-- Email: amariah.abish@gmail.com (preferred for contracts)
-- LinkedIn: https://www.linkedin.com/in/amariah-kamau-3156412a6/
-- Portfolio: https://portfolio-pied-five-61.vercel.app/
+This structure makes each eval:
 
-Last updated: November 18, 2025
+- deterministic  
+- pipeline-ready  
+- reproducible  
+- suitable for automated scoring and internal lab eval harnesses  
+
+---
+
+## 📌 Evaluation Depth
+
+Every evaluation is **8–22 turns** and forces models to:
+
+- iteratively debug  
+- derive correct algorithms  
+- optimize under strict constraints  
+- verify proofs or numerical stability  
+- output merge-ready, CI-passing code  
+
+These are **not** “toy tasks.”  
+They’re designed to fail any model relying on shallow heuristics or pattern-matching.
+
+---
+
+## 🔍 Seeking Contract / Bounty Work
+
+Actively looking for paid work with AI labs to:
+
+- Build ultra-hard custom evals  
+- Red-team internal coding agents  
+- Design safety-relevant evaluations (cyber, finance, avionics, robotics, bio-risk)  
+
+---
+
+## 📬 Contact
+
+- **Email:** amariah.abish@gmail.com  
+- **LinkedIn:** https://www.linkedin.com/in/amariah-kamau-3156412a6/  
+- **Portfolio:** https://portfolio-pied-five-61.vercel.app/  
+
+_Last updated: November 18, 2025_
