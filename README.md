@@ -19,23 +19,21 @@ These tasks are designed to expose deep, systematic weaknesses in current fronti
 ## 📁 Repository Structure (Used Across All Evals)
 
 Each evaluation folder strictly follows this format:
-
+```
 /eval-name/
-requirements.md ← Technical constraints: hardware, compilers, flags, profilers,
-memory/time caps, numeric tolerances, CI requirements.
-task.md ← Full multi-turn evaluation prompt.
-expected_result.md ← Ground-truth invariants, acceptance tests, proofs, performance
-ceilings, and red-team traps.
-
-yaml
-Copy code
+├── requirements.md       # Technical constraints: hardware, compilers, flags, profilers,
+│                        # memory/time caps, numeric tolerances, CI requirements
+├── task.md              # Full multi-turn evaluation prompt
+└── expected_result.md   # Ground-truth invariants, acceptance tests, proofs,
+                         # performance ceilings, and red-team traps
+```
 
 This structure makes each eval:
 
-- deterministic  
-- pipeline-ready  
-- reproducible  
-- suitable for automated scoring and internal lab eval harnesses  
+- **Deterministic** – Same inputs produce same outputs
+- **Pipeline-ready** – Can be automated in CI/CD systems
+- **Reproducible** – Clear requirements enable exact replication
+- **Suitable for automated scoring** – Works with internal lab eval harnesses
 
 ---
 
