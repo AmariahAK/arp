@@ -1,4 +1,4 @@
-# Amariah Kamau – Frontier Model Red Teaming & Hard-Coding Evals Portfolio
+# Frontier Model Red Teaming & Hard-Coding Evals Portfolio
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
